@@ -1,0 +1,45 @@
+GET   https://api.ngrok.com/endpoints
+Authorization: Bearer 2npJaJjnLBj1RGPcGf0QiyAAJHJ_5qqtw2divkpoAipqN9WLG
+Ngrok-Version: 2
+###
+POST https://f1dd-34-34-44-137.ngrok-free.app/api/generate
+Content-Type: application/json
+
+{ "model": "llama3", "prompt":"write a 2 line poem" , "stream": false }
+###
+# POST http://0.0.0.0:8000/open_colab
+
+POST http://localhost:8000/find_disease
+Content-Type: application/json
+
+{
+  "selected_symptoms": [
+    "dizziness",
+    "nausea or vomiting",
+    "seizures"
+  ]
+}
+###
+POST http://localhost:8000/find_disease_list
+Content-Type: application/json
+
+{
+  "symptom":"vomiting"
+}
+###
+POST http://localhost:8000/pass2llm
+Content-Type: application/json
+
+{
+    "Disease": "Subdural hemorrhage",
+    "Symptoms": [
+      "Headache",
+      "confusion",
+      "dizziness",
+      "nausea or vomiting",
+      "seizures",
+      "weakness or numbness"
+    ],
+    "Treatments": "Immediate medical attention, close monitoring of vital signs and neurological status, diagnostic imaging (such as CT or MRI scan), potential surgical intervention (such as craniotomy or burr hole evacuation), medication to manage symptoms",
+    "MatchCount": 3
+  }
